@@ -7,7 +7,7 @@ import structlog_extensions
 """
 
 # SERVER SOCKET
-bind = "127.0.0.1:80"
+bind = "127.0.0.1:443"
 backlog = 2048
 
 # DEBUGGING
@@ -28,12 +28,13 @@ keepalive = 2
 proc_name = "ssg-product"
 
 # SSL
-keyfile = None
-certfile = None
-ca_certs = None
+certfile = "certs/localhost.crt"
+ssl_version = "TLSv1_2"
+keyfile = "certs/localhost.key"
+
 
 # LOGGING
-errorlog = "logs/error.log"
+errorlog = "logs/gunicorn.log"
 loglevel = "info"
 capture_output = True
 
