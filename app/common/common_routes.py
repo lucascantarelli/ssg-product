@@ -1,6 +1,4 @@
 from flask import Blueprint
-import logging
-
 
 class CommonRoutes:
     """
@@ -17,7 +15,7 @@ class CommonRoutes:
         """
 
         return 'Hello World'
-
+        
     @COMMON_BP.route('/health', methods=['GET'])
     def health_check() -> dict:
         """

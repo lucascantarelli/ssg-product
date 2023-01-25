@@ -25,7 +25,6 @@ class App(Flask):
         self.env = os.environ.get('APP_ENV', 'Development')
         # Carrega as informações de health check.
         self.health = self.health_check()
-
         # Configura os middlewares
         self.__configure_middlewares()
 
@@ -41,15 +40,14 @@ class App(Flask):
         """
 
         return self.app
-
+        
     def health_check(self) -> dict:
         """
         # Retorna o status da aplicação.
-        """
-        app_status = {
+        """ 
+        return {
             "status": "OK",
             "message": "Application is running.",
             "version": "0.0.0",
             "environment": self.env
         }
-        return app_status
