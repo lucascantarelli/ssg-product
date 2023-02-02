@@ -515,18 +515,6 @@ sortedcontainers = ">=2.4.0,<3.0.0"
 toml = ">=0.10.0,<0.11.0"
 
 [[package]]
-name = "deepmerge"
-version = "1.1.0"
-description = "a toolset to deeply merge python dictionaries."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "deepmerge-1.1.0-py3-none-any.whl", hash = "sha256:59e6ef80b77dc52af3882a1ea78da22bcfc91ae9cdabc0c80729049fe295ff8b"},
-    {file = "deepmerge-1.1.0.tar.gz", hash = "sha256:4c27a0db5de285e1a7ceac7dbc1531deaa556b627dea4900c8244581ecdfea2d"},
-]
-
-[[package]]
 name = "distlib"
 version = "0.3.6"
 description = "Distribution utilities"
@@ -1055,6 +1043,21 @@ files = [
     {file = "lockfile-0.12.2-py2.py3-none-any.whl", hash = "sha256:6c3cb24f344923d30b2785d5ad75182c8ea7ac1b6171b08657258ec7429d50fa"},
     {file = "lockfile-0.12.2.tar.gz", hash = "sha256:6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799"},
 ]
+
+[[package]]
+name = "logging-json"
+version = "0.4.0"
+description = "JSON formatter for python logging"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "logging_json-0.4.0-py3-none-any.whl", hash = "sha256:e56c0e79fd18573007ccef50fa98689f73c4640c5a2117e7375af0ac43ac95d7"},
+    {file = "logging_json-0.4.0.tar.gz", hash = "sha256:ab550d0a16c17a3de7740b1552738ff4f478093b1688902fa397d08ed1952678"},
+]
+
+[package.extras]
+testing = ["pytest-cov (>=4.0.0,<5.0.0)"]
 
 [[package]]
 name = "markdown-it-py"
@@ -1740,16 +1743,19 @@ files = [
 six = ">=1.5"
 
 [[package]]
-name = "pytz"
-version = "2022.7.1"
-description = "World timezone definitions, modern and historical"
-category = "main"
+name = "python-dotenv"
+version = "0.21.1"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "dev"
 optional = false
-python-versions = "*"
+python-versions = ">=3.7"
 files = [
-    {file = "pytz-2022.7.1-py2.py3-none-any.whl", hash = "sha256:78f4f37d8198e0627c5f1143240bb0206b8691d8d7ac6d78fee88b78733f8c4a"},
-    {file = "pytz-2022.7.1.tar.gz", hash = "sha256:01a0681c4b9684a28304615eba55d1ab31ae00bf68ec157ec3708a8182dbbcd0"},
+    {file = "python-dotenv-0.21.1.tar.gz", hash = "sha256:1c93de8f636cde3ce377292818d0e440b6e45a82f215c3744979151fa8151c49"},
+    {file = "python_dotenv-0.21.1-py3-none-any.whl", hash = "sha256:41e12e0318bebc859fcc4d97d4db8d20ad21721a6aa5047dd59f090391cb549a"},
 ]
+
+[package.extras]
+cli = ["click (>=5.0)"]
 
 [[package]]
 name = "pyupgrade"
@@ -2199,42 +2205,6 @@ files = [
 pbr = ">=2.0.0,<2.1.0 || >2.1.0"
 
 [[package]]
-name = "structlog"
-version = "22.3.0"
-description = "Structured Logging for Python"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "structlog-22.3.0-py3-none-any.whl", hash = "sha256:b403f344f902b220648fa9f286a23c0cc5439a5844d271fec40562dbadbc70ad"},
-    {file = "structlog-22.3.0.tar.gz", hash = "sha256:e7509391f215e4afb88b1b80fa3ea074be57a5a17d794bd436a5c949da023333"},
-]
-
-[package.extras]
-dev = ["structlog[docs,tests,typing]"]
-docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-mermaid", "twisted"]
-tests = ["coverage[toml]", "freezegun (>=0.2.8)", "pretend", "pytest (>=6.0)", "pytest-asyncio (>=0.17)", "simplejson"]
-typing = ["mypy", "rich", "twisted"]
-
-[[package]]
-name = "structlog-extensions-nralbers"
-version = "1.0.4"
-description = "Processors for Structlog library"
-category = "main"
-optional = false
-python-versions = "~=3.5"
-files = [
-    {file = "structlog-extensions-nralbers-1.0.4.tar.gz", hash = "sha256:5a203574a72b733cda050390ebd7e209bcca25c295ed3c3b40e486a51eb6bf4c"},
-    {file = "structlog_extensions_nralbers-1.0.4-py3-none-any.whl", hash = "sha256:264fee9cca2d7f47a71583ee3b69fa7e1bd524d37a1a974a0a3ffc0e3f011158"},
-]
-
-[package.dependencies]
-deepmerge = "*"
-pytz = "*"
-structlog = ">=19.2"
-user-agents = "*"
-
-[[package]]
 name = "tokenize-rt"
 version = "5.0.0"
 description = "A wrapper around the stdlib `tokenize` which roundtrips."
@@ -2341,18 +2311,6 @@ files = [
 ]
 
 [[package]]
-name = "ua-parser"
-version = "0.16.1"
-description = "Python port of Browserscope's user agent parser"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "ua-parser-0.16.1.tar.gz", hash = "sha256:ed3efc695f475ffe56248c9789b3016247e9c20e3556cfa4d5aadc78ab4b26c6"},
-    {file = "ua_parser-0.16.1-py2.py3-none-any.whl", hash = "sha256:f97126300df8ac0f8f2c9d8559669532d626a1af529265fd253cba56e73ab36e"},
-]
-
-[[package]]
 name = "urllib3"
 version = "1.26.14"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -2368,21 +2326,6 @@ files = [
 brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)", "brotlipy (>=0.6.0)"]
 secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "ipaddress", "pyOpenSSL (>=0.14)", "urllib3-secure-extra"]
 socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
-
-[[package]]
-name = "user-agents"
-version = "2.2.0"
-description = "A library to identify devices (phones, tablets) and their capabilities by parsing browser user agent strings."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "user-agents-2.2.0.tar.gz", hash = "sha256:d36d25178db65308d1458c5fa4ab39c9b2619377010130329f3955e7626ead26"},
-    {file = "user_agents-2.2.0-py3-none-any.whl", hash = "sha256:a98c4dc72ecbc64812c4534108806fb0a0b3a11ec3fd1eafe807cee5b0a942e7"},
-]
-
-[package.dependencies]
-ua-parser = ">=0.10.0"
 
 [[package]]
 name = "virtualenv"
@@ -2557,4 +2500,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "71c0f2473160e8c0ab8be7491db581f6369eaa13558899db1d38f439432d6722"
+content-hash = "54a73ab77e60d8c3e319b0f970bb85ab802c5a94c3dc8a7896bb487fd5851265"

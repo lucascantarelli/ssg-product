@@ -1,0 +1,41 @@
+version: 1
+disable_existing_loggers: false
+formatters:
+  json:
+    "()": logging_json.JSONFormatter
+    "datefmt": "%d/%m/%Y %H:%M:%S"
+    # The following fields are optional
+    fields:
+      level: levelname
+      timestamp: asctime
+      message: message
+      module: module
+      filename: filename
+      funcname: funcName
+      lineno: lineno
+      exc_info: exc_info
+      exc_text: exc_text
+      stack_info: stack_info
+      args: args
+      msecs: msecs
+
+handlers:
+  standard_output:
+    class: logging.StreamHandler
+    formatter: json
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: json
+    filename: logs/ssg.log
+    maxBytes: 1024
+    backupCount: 2
+
+loggers:
+  my_app:
+    level: DEBUG
+    handlers: [standard_output, file]
+    propagate: true
+root:
+  level: DEBUG
+  handlers: [standard_output, file]

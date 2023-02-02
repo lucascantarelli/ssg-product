@@ -1,4 +1,6 @@
 from flask import Blueprint
+import logging
+
 
 class CommonRoutes:
     """
@@ -15,17 +17,17 @@ class CommonRoutes:
         """
 
         return 'Hello World'
-        
+
     @COMMON_BP.route('/health', methods=['GET'])
     def health_check() -> dict:
         """
         # Retorna o status da aplicação.
         """
+        logging.info('Health check', extra={'route': CommonRoutes.health_check.__name__})
         app_status = {
             "status": "OK",
             "message": "Application is running.",
             "version": "0.0.0",
             "environment": "dev"
         }
-        #logging.info("health check", extra=app_status)
         return app_status
