@@ -1,5 +1,5 @@
 # Criar branch automaticamente quando uma issue é criada
 mode: auto
 # Nome da branch
-branchName: "SSG-${issue.title}"
+branchName: "SSG-${issue.id}"
 #
