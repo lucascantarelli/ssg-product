@@ -2,4 +2,11 @@
 mode: auto
 # Nome da branch
 branchName: "SSG-${issue.number}"
-#
+# Fechar a issue automaticamente quando a branch mergeada
+autoCloseIssue: true
+
+# Baseados na tag.
+branchs:
+  - label: enhancement
+    prefix: "feature/"
+    branchName: "${issue.number}"
