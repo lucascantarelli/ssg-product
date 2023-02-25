@@ -8,7 +8,7 @@ class Blueprint:
     """
 
     @classmethod
-    def init_app(cls, app: Flask) -> None:
+    def init_blueprint(cls, app: Flask) -> None:
         """
         # Registra as rotas no app.
         """
