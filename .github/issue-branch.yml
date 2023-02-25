@@ -7,6 +7,14 @@ autoCloseIssue: true
 
 # Baseados na tag.
 branchs:
-  - label: enhancement
+  - label: feature
     prefix: "feature/"
     branchName: "${issue.number}"
+
+  - label: bug
+    prefix: "bugfix/"
+    branchName: "${issue.number}"
+
+  - label: epic
+    prefix: "release/"
+    branchName: "${issue.milestone}"
