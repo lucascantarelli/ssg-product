@@ -1,5 +1,6 @@
 from flask import Flask
 import logging.config
+import logging_json
 import yaml
 
 
@@ -9,7 +10,7 @@ class Logger:
     """
 
     @classmethod
-    def init_app(cls, app: Flask) -> None:
+    def init_logger(cls, app: Flask) -> None:
         """
         # Registra o middleware no app.
         """

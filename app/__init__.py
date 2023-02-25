@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from app.middlewares import configure_middlewares
+from dotenv import load_dotenv
 
 
 class App(Flask):
@@ -21,8 +22,8 @@ class App(Flask):
         )
         # App recebe a própria instancia.
         self.app = self
-        # Verifica o ambiente do app e carrega as configs.
-        self.app.env = os.environ.get('APP_ENV', 'Development')
+        # Carrega as variaveis do ambiente da aplicação.
+        load_dotenv()
         # Configura os middlewares
         configure_middlewares(self.app)
 

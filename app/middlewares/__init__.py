@@ -7,5 +7,5 @@ def configure_middlewares(app: Flask) -> None:
     """
     # Configura os middlewares da aplicação.
     """
-    Blueprint.init_app(app)
-    Logger.init_app(app)
+    Blueprint.init_blueprint(app)
+    Logger.init_logger(app)
